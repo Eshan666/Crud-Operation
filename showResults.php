@@ -25,17 +25,24 @@ $result = mysqli_query($conn,$sql);
 echo'<table class="table" id="myTable">';
 echo"<thead>";
     echo"<tr>";
+        echo'<th scope="col">Serial</th>';
         echo'<th scope="col">Title</th>';
         echo'<th scope="col">Description</th>';
         echo'<th scope="col">Date</th>';
 
    echo" </tr>";
 echo"</thead>";
+$no=0;
 
 while($row = mysqli_fetch_assoc($result)){
+
+  $no = $no+1;
    
    echo" <tbody>";
         echo"<tr>";
+        echo"<td>";
+        echo $no;
+        echo"</td>";
         echo"<td>";
         echo $row['title'];
         echo"</td>";
